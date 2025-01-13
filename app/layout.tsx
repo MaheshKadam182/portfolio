@@ -1,4 +1,15 @@
+import type { Metadata } from "next"
+import { Inter } from 'next/font/google'
+import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Header } from "@/components/header"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata: Metadata = {
+  title: "Mahesh Kadam - Full Stack Developer",
+  description: "Portfolio website of Mahesh Kadam, a full stack developer",
+}
 
 export default function RootLayout({
   children,
@@ -7,13 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
         </ThemeProvider>
       </body>

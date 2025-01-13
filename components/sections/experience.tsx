@@ -1,9 +1,15 @@
-"use client"
-
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const experiences = [
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  logo: string;
+  points: string[];
+}
+
+const experiences: Experience[] = [
   {
     title: "Frontend developer intern",
     company: "zeza.tech",
@@ -26,9 +32,9 @@ const experiences = [
   }
 ]
 
-export default function Experience() {
+export function ExperienceSection() {
   return (
-    <section className="min-h-screen pt-20 pb-16">
+    <section id="experience" className="min-h-screen pt-20 pb-16">
       <div className="container">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -69,5 +75,4 @@ export default function Experience() {
       </div>
     </section>
   )
-}
-
+} 

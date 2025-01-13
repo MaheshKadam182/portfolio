@@ -1,12 +1,10 @@
-"use client"
-
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-export default function About() {
+export function AboutSection() {
   return (
-    <section className="min-h-screen pt-20 pb-16">
+    <section id="about" className="min-h-screen pt-20 pb-16">
       <div className="container">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -62,5 +60,4 @@ export default function About() {
       </div>
     </section>
   )
-}
-
+} 

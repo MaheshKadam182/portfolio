@@ -1,12 +1,19 @@
-"use client"
-
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  github: string;
+  live: string;
+  techStack: string[];
+}
+
+const projects: Project[] = [
   {
     title: "Quickflow",
     description: "Quickflow is an open-source alternative to Notion that aims to provide a superior user experience. It utilizes NextJS13 as a framework, Shadcn and TailwindCSS for styling, Clerk for...",
@@ -18,9 +25,9 @@ const projects = [
   // Add more projects here
 ]
 
-export default function Projects() {
+export function ProjectsSection() {
   return (
-    <section className="min-h-screen pt-20 pb-16 relative overflow-hidden">
+    <section id="projects" className="min-h-screen pt-20 pb-16 relative overflow-hidden">
       <div className="container relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -88,5 +95,4 @@ export default function Projects() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 dark:from-blue-950 to-transparent -skew-y-12 transform-gpu" />
     </section>
   )
-}
-
+} 
